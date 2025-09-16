@@ -39,3 +39,36 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# logs
+logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# SASS cache
+.sass-cache/
+
+# Parcel cache
+.cache/
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# npm package lock
+package-lock.json
+pnpm-lock.yaml
+
+# Optional build artifacts
+dist/
+tmp/
+temp/
