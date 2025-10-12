@@ -1,4 +1,22 @@
 export default function Home() {
+  const barbers = [
+    {
+      name: "Barber 1",
+      description: "Expert in classic cuts and modern styles.",
+      image: "/barber1.jpg",
+    },
+    {
+      name: "Barber 2",
+      description: "Specializes in fades and beard trims.",
+      image: "/barber2.jpg",
+    },
+    {
+      name: "Barber 3",
+      description: "Known for precision cuts and styling.",
+      image: "/barber3.jpg",
+    },
+  ];
+
   return (
     <>
       <nav className=" p-6 flex justify-between items-center relative z-40">
@@ -30,8 +48,7 @@ export default function Home() {
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/banner.png')",
-        }}
-      >
+        }}>
         <div className=" bg-opacity-100 h-full flex flex-col justify-center items-center text-white p-40">
           <h1 className="text-4xl font-bold mb-2">Find Your Perfect Barber</h1>
           <p className="text-lg">Discover and review barbers near you</p>
@@ -56,8 +73,7 @@ export default function Home() {
             <div className="">
               <div
                 className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm 
-              dark:bg-gray-800 dark:border-gray-700 inline-block m-4"
-              >
+              dark:bg-gray-800 dark:border-gray-700 inline-block m-4">
                 <a href="#">
                   <img className="rounded-t-lg" src="banner.png" alt="" />
                 </a>
@@ -76,8 +92,7 @@ export default function Home() {
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center
                      text-white bg-blue-700 rounded-lg hover:bg-blue-800 f
                      ocus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 
-                     dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
+                     dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Rate here!
                   </a>
                 </div>
@@ -100,16 +115,14 @@ export default function Home() {
                     href="#"
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center
                      text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 
-                     focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
+                     focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Rate here!
                   </a>
                 </div>
               </div>
               <div
                 className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm
-               dark:bg-gray-800 dark:border-gray-700 inline-block m-4"
-              >
+               dark:bg-gray-800 dark:border-gray-700 inline-block m-4">
                 <a href="#">
                   <img className="rounded-t-lg" src="banner.png" alt="" />
                 </a>
@@ -127,8 +140,7 @@ export default function Home() {
                     href="#"
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white
                      bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300
-                      dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
+                      dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Rate here!
                   </a>
                 </div>
