@@ -1,6 +1,6 @@
 "use client";
 import { supabase } from "@/lib/supabase-clinet";
-import { createClient } from "@supabase/supabase-js";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 interface Barber {
@@ -72,7 +72,11 @@ export default function Login() {
               </div>
               <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img className="rounded-t-lg" alt="" src={barber.imageUrl} />
+                  <Image
+                    className="rounded-t-lg"
+                    alt=""
+                    src={barber.imageUrl}
+                  />
                 </a>
                 <div className="p-5">
                   <a href="#">
