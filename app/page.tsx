@@ -27,7 +27,7 @@ export default async function Home() {
           className="relative w-full bg-cover bg-center bg-no-repeat min-h-[360px] md:min-h-[480px] lg:min-h-[540px]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/banner.png')",
+              "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/images/banner.png')",
           }}>
           {/* Hero content */}
           <div className="flex items-center justify-center px-4 md:px-8">
@@ -45,7 +45,7 @@ export default async function Home() {
                 <input
                   type="text"
                   placeholder="Search for a barber or city (e.g. Oslo)…"
-                  className="w-full py-3 px-5 rounded-2xl border border-gray-200 shadow-lg text-black 
+                  className="w-full py-3 px-5 rounded-2xl border border-gray-200 shadow-lg text-white 
                              focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-500"
                 />
               </div>
@@ -132,7 +132,7 @@ export default async function Home() {
                     {/* Image area – click to go to barber profile */}
                     <a href={`/barber/${barber.id}`}>
                       <img
-                        src={barber.imageUrl || "/default-barber.jpg"}
+                        src={barber.imageUrl || "/default-barber.png"}
                         alt={barber.name}
                         className="w-full h-56 object-cover"
                       />
