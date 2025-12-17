@@ -1,6 +1,4 @@
-import { supabase } from "@/lib/supabase-clinet";
-import Navbar from "./components/Navbar";
-import Link from "next/link";
+import { supabase } from "@/lib/supabase-client";
 
 export default async function Home() {
   // Fetch approved barbers from Supabase
@@ -19,7 +17,6 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-[#f6f0e9] text-slate-900">
       {/* Top navigation */}
-      <Navbar />
 
       <main className="relative">
         {/* ================= HERO / BANNER ================= */}
@@ -198,16 +195,6 @@ export default async function Home() {
         </section>
 
         {/* ================= FOOTER ================= */}
-        <footer className="border-t border-gray-200 bg-[#f3ece4]">
-          <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs md:text-sm text-gray-500">
-              © {new Date().getFullYear()} RateMyBarber. All rights reserved.
-            </p>
-            <p className="text-xs md:text-sm text-gray-400">
-              Built for discovering great barbers, one review at a time.
-            </p>
-          </div>
-        </footer>
       </main>
     </div>
   );

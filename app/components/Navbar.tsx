@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -23,9 +22,13 @@ export default function Navbar() {
         </div>
 
         {/* CENTER: Logo / site name */}
-        <div className="text-xl font-extrabold tracking-tight text-gray-800 flex-1 flex justify-center">
-          <Link href="/">
-            RateMy<span className="text-red-600">Barber</span>
+        <div className="text-xl font-extrabold tracking-tight flex-1 flex justify-center">
+          <Link href="/" className="hover:opacity-90 transition">
+            Rate
+            <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
+              My
+            </span>
+            Barber
           </Link>
         </div>
 

@@ -1,5 +1,5 @@
 "use client";
-import { supabase } from "@/lib/supabase-clinet";
+import { supabase } from "@/lib/supabase-client";
 import React, { useEffect, useState } from "react";
 
 interface Barber {
