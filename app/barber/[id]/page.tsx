@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 
+import WriteReviewModal from "@/app/components/modals/WriteReviewModal";
 import { supabase } from "@/lib/supabase-client";
 
 type PageProps = {
@@ -48,7 +49,7 @@ export default async function BarberProfilePage({ params }: PageProps) {
   const ratingCount = barber.rating_count ?? 0;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen pb-16 bg-gray-50">
       {/* Top navigation */}
 
       <main className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
@@ -137,11 +138,7 @@ export default async function BarberProfilePage({ params }: PageProps) {
             </div>
 
             {/* Later this will link to a review form or open a modal */}
-            <a
-              href="#"
-              className="text-sm font-medium text-blue-600 hover:text-blue-700">
-              Write a review (coming next)
-            </a>
+            <WriteReviewModal barberId={barberId} />
           </div>
 
           {/* Review list */}
