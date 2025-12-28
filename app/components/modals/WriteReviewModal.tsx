@@ -1,6 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useTransition,
+  useState,
+} from "react";
+import { useRouter } from "next/navigation";
 import ReviewForm from "../forms/ReviewForm";
 
 type WriteReviewModalProps = {
@@ -8,13 +15,19 @@ type WriteReviewModalProps = {
 };
 
 export default function WriteReviewModal({ barberId }: WriteReviewModalProps) {
-  // Controls whether the modal is open
+  const router = useRouter();
+
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close modal helper
-  const closeModal = () => setIsOpen(false);
+  // For timing how long refresh takes
+  const refreshStartRef = useRef<number | null>(null);
 
-  // Optional: close on Escape key
+  // Lets us know when router.refresh() is "in flight"
+  const [isPending, startTransition] = useTransition();
+
+  const closeModal = useCallback(() => setIsOpen(false), []);
+
+  // Close on Escape
   useEffect(() => {
     if (!isOpen) return;
 
@@ -22,42 +35,65 @@ export default function WriteReviewModal({ barberId }: WriteReviewModalProps) {
       if (e.key === "Escape") closeModal();
     };
 
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [isOpen]);
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [isOpen, closeModal]);
+
+  // When refresh finishes, log how long it took
+  useEffect(() => {
+    if (!isPending && refreshStartRef.current !== null) {
+      const ms = performance.now() - refreshStartRef.current;
+      console.log(
+        `[WriteReviewModal] router.refresh() completed in ${ms.toFixed(0)}ms`
+      );
+      refreshStartRef.current = null;
+    }
+  }, [isPending]);
+
+  // Called after the review insert succeeds
+  const handleSuccess = useCallback(() => {
+    closeModal();
+
+    refreshStartRef.current = performance.now();
+    console.log("[WriteReviewModal] Starting router.refresh()...");
+
+    startTransition(() => {
+      router.refresh();
+    });
+  }, [closeModal, router, startTransition]);
 
   return (
     <>
-      {/* This is the clickable “Write a review” trigger */}
+      {/* Trigger */}
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="text-sm font-medium text-blue-600 hover:text-blue-700">
+        className="px-4 py-2 rounded-xl text-sm font-medium text-white bg-green-600 hover:bg-green-700">
         Write a review
       </button>
 
-      {/* Modal UI only renders when open */}
+      {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-50">
-          {/* Backdrop (clicking outside closes modal) */}
-          <button
-            type="button"
-            aria-label="Close modal backdrop"
-            onClick={closeModal}
-            className="absolute inset-0 bg-black/50"
-          />
+        <div
+          className="fixed inset-0 z-50 bg-black/50"
+          onMouseDown={closeModal}>
+          {/* Backdrop (outside click closes) */}
+          <div className="absolute inset-0 " aria-hidden="true" />
 
-          {/* Modal panel wrapper */}
+          {/* Center wrapper */}
           <div className="relative min-h-full flex items-center justify-center px-4 py-10">
-            {/* Modal panel */}
-            <div className="relative w-full max-w-lg rounded-2xl bg-white shadow-xl border border-gray-100">
+            {/* Panel (stop clicks inside from closing) */}
+            <div
+              role="dialog"
+              aria-modal="true"
+              className="relative w-full max-w-lg rounded-2xl bg-white shadow-xl border border-gray-100"
+              onMouseDown={(e) => e.stopPropagation()}>
               {/* Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                 <h3 className="text-lg font-semibold text-gray-900">
                   Write a review
                 </h3>
 
-                {/* Close button */}
                 <button
                   type="button"
                   onClick={closeModal}
@@ -72,7 +108,7 @@ export default function WriteReviewModal({ barberId }: WriteReviewModalProps) {
                 <ReviewForm
                   barberId={barberId}
                   onCancel={closeModal}
-                  onSuccess={closeModal}
+                  onSuccess={handleSuccess}
                 />
               </div>
             </div>

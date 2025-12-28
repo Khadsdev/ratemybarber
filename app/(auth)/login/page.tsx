@@ -86,13 +86,13 @@ export default function Login() {
                 <DialogPanel
                   transition
                   className="relative transform overflow-hidden rounded-lg bg-gray-800 text-left shadow-xl outline -outline-offset-1 outline-white/10 transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95">
-                  <div className="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
-                      <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-red-500/10 sm:mx-0 sm:size-10"></div>
+                      <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-red-700 sm:mx-0 sm:size-10"></div>
                       <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                         <DialogTitle
                           as="h3"
-                          className="text-base font-semibold text-white flex">
+                          className="text-base font-semibold text-black flex">
                           Write a review
                         </DialogTitle>
 
@@ -168,7 +168,7 @@ export default function Login() {
                           <div className="flex items-center space-x-4 border-t border-default pt-4 md:pt-6">
                             <button
                               type="submit"
-                              className="inline-flex items-center text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                              className="inline-flex items-center text-black bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
                               <svg
                                 className="w-4 h-4 me-1.5 -ms-0.5"
                                 aria-hidden="true"

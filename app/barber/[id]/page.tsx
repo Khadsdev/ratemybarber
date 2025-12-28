@@ -110,7 +110,7 @@ export default async function BarberProfilePage({ params }: PageProps) {
             {barber.specialty && (
               <p className="mt-4 text-gray-800 font-medium">
                 Specialty:{" "}
-                <span className="font-normal text-gray-700">
+                <span className="font-bold text-gray-700">
                   {barber.specialty}
                 </span>
               </p>

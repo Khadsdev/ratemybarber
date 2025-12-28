@@ -13,10 +13,10 @@ export default function Navbar() {
       <div className="px-4 py-3 flex justify-between items-center">
         {/* LEFT: Social links (desktop only) */}
         <div className="hidden md:flex space-x-4 text-gray-600">
-          <Link href="https://x.com" className="hover:text-blue-500">
+          <Link href="https://x.com" className="hover:text-emerald-500">
             Twitter
           </Link>
-          <Link href="https://github.com" className="hover:text-blue-500">
+          <Link href="https://github.com" className="hover:text-emerald-500">
             GitHub
           </Link>
         </div>
@@ -40,7 +40,7 @@ export default function Navbar() {
           {/* Desktop "Sign In" text */}
           <Link
             href="/login"
-            className="hidden md:inline text-gray-600 hover:text-blue-600">
+            className="hidden md:inline text-gray-600 hover:text-emerald-600">
             Sign In
           </Link>
 
@@ -67,7 +67,7 @@ export default function Navbar() {
             <Link
               href="/login"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
+              className="block w-full text-center bg-emerald-600 text-white font-semibold py-2 rounded-lg hover:bg-emerald-700 transition-colors">
               Sign In
             </Link>
           </div>
@@ -78,14 +78,14 @@ export default function Navbar() {
             <div className="flex flex-col space-y-2">
               <Link
                 href="https://x.com"
-                className="text-gray-700 hover:text-blue-600"
+                className="text-gray-700 hover:text-emerald-600"
                 onClick={() => setIsOpen(false)}>
                 Twitter
               </Link>
 
               <Link
                 href="https://github.com"
-                className="text-gray-700 hover:text-blue-600"
+                className="text-gray-700 hover:text-emerald-600"
                 onClick={() => setIsOpen(false)}>
                 GitHub
               </Link>
