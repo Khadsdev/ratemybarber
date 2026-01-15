@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RateMyBarber ✂️
 
-## Getting Started
+RateMyBarber is a web application where users can discover barbers, view reviews, and share their own experiences.  
+The goal of the project was to practice building a real-world, user-focused web app using modern frontend technologies.
 
-First, run the development server:
+![RateMyBarber Home](./screenshots/home.png)
+
+---
+
+## 🧠 Why I built this
+
+I wanted to build something that feels like a real product — not just a tutorial.  
+RateMyBarber helped me practice:
+
+- Component-based UI development
+- Data handling and state management
+- Thinking about user experience and flows
+- Structuring a scalable frontend project
+
+---
+
+## 🚀 Features
+
+- Browse barbers
+- View barber profiles
+- Read and write reviews
+- Responsive design for desktop and mobile
+
+---
+
+## 🛠 Tech Stack
+
+- **Next.js**
+- **TypeScript**
+- **React**
+- **Tailwind CSS**
+- **Supabase** (database & auth) _(if applicable — remove if not used yet)_
+
+---
+
+## 📸 Screenshots
+
+### Barber Profile
+
+![Barber Profile](./screenshots/profile.png)
+
+### Write a Review
+
+![Write Review](./screenshots/review.png)
+
+---
+
+## 📚 What I learned
+
+- Building reusable React components
+- Working with Next.js App Router
+- Handling forms and user input
+- Structuring a project for readability and growth
+- Iterating based on real UI problems
+
+---
+
+## 🧪 Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
