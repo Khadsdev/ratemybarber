@@ -1,30 +1,30 @@
 # RateMyBarber ✂️
 
-RateMyBarber is a web application where users can discover barbers, view reviews, and share their own experiences.  
-The goal of the project was to practice building a real-world, user-focused web app using modern frontend technologies.
+RateMyBarber is a web app where users can discover barbers, view reviews, and share their own experiences.
+I’m building this project to practice real-world product development with modern frontend tools — and to get better by shipping features consistently.
 
-![RateMyBarber Home](./screenshots/home.png)
+![Admin Dashboard](./screenshots/dashboard.png)
+
+---
+
+## 🚀 What it does (so far)
+
+- Browse barbers and view barber profiles
+- Read reviews tied to each barber
+- Submit new reviews (stored in the database)
+- Admin dashboard (in progress) for handling pending submissions (approve / reject)
 
 ---
 
 ## 🧠 Why I built this
 
-I wanted to build something that feels like a real product — not just a tutorial.  
-RateMyBarber helped me practice:
+I wanted a project that feels like a real product — not just a tutorial.
+This app helps me improve my skills in:
 
-- Component-based UI development
-- Data handling and state management
-- Thinking about user experience and flows
-- Structuring a scalable frontend project
-
----
-
-## 🚀 Features
-
-- Browse barbers
-- View barber profiles
-- Read and write reviews
-- Responsive design for desktop and mobile
+- Building reusable components and clean UI
+- Working with real data (CRUD)
+- Designing flows that make sense for users and admins
+- Iterating fast and learning by doing
 
 ---
 
@@ -34,33 +34,58 @@ RateMyBarber helped me practice:
 - **TypeScript**
 - **React**
 - **Tailwind CSS**
-- **Supabase** (database & auth) _(if applicable — remove if not used yet)_
+- **Supabase** (database for barbers & reviews)
+
+---
+
+## 🗃 Data (Supabase)
+
+Supabase is currently used to store:
+
+- Barbers
+- Reviews
+
+Planned next:
+
+- Supabase Auth (login)
+- Role-based access for admin dashboard (RLS policies)
+
+---
+
+## 🧭 Roadmap
+
+- [x] Core UI + routing
+- [x] Barbers + reviews data in Supabase
+- [x] Start admin dashboard
+- [ ] Add authentication (Supabase Auth)
+- [ ] Secure admin actions with RLS
+- [ ] Improve validation + error handling
+- [ ] Add testing (basic)
+- [ ] Polish UI + accessibility
 
 ---
 
 ## 📸 Screenshots
 
+### Home / Browse
+
+![Home](./screenshots/home.png)
+
 ### Barber Profile
 
-![Barber Profile](./screenshots/profile.png)
+![Profile](./screenshots/profile.png)
 
-### Write a Review
+### Review Profile
 
-![Write Review](./screenshots/review.png)
+![Profile](./screenshots/review.png)
 
----
+### Admin Dashboard
 
-## 📚 What I learned
-
-- Building reusable React components
-- Working with Next.js App Router
-- Handling forms and user input
-- Structuring a project for readability and growth
-- Iterating based on real UI problems
+![Dashboard](./screenshots/dashboard.png)
 
 ---
 
-## 🧪 Run locally
+## ▶️ Run locally
 
 ```bash
 npm install
