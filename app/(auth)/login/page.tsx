@@ -16,6 +16,7 @@ interface Barber {
   city: string;
   imageUrl: string;
   created_at: string;
+  specialty: string;
 }
 
 export default function Login() {
@@ -75,12 +76,13 @@ export default function Login() {
             onClick={() => setOpen(true)}>
             Open Modal
           </button>
+
+          {/* Dialog that popups */}
           <Dialog open={open} onClose={setOpen} className="relative z-10">
             <DialogBackdrop
               transition
               className="fixed inset-0 bg-gray-900/50 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
             />
-
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
               <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                 <DialogPanel
@@ -238,7 +240,7 @@ export default function Login() {
                     </h5>
                   </a>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {barber.description}
+                    {barber.specialty}
                   </p>
                   <a
                     href="#"

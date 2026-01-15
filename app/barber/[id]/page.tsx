@@ -49,7 +49,7 @@ export default async function BarberProfilePage({ params }: PageProps) {
   const ratingCount = barber.rating_count ?? 0;
 
   return (
-    <div className="min-h-screen pb-16 bg-gray-50">
+    <div className="min-h-screen pb-16 bg-[#f6f0e9]">
       {/* Top navigation */}
 
       <main className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">

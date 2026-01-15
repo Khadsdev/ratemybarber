@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     // OUTER NAV: background + shadow, scrolls with page (not sticky)
-    <nav className="bg-white shadow-sm z-50">
+    <nav className="bg-white border-b border-black/10">
       {/* INNER CONTAINER: spacing + layout */}
       <div className="px-4 py-3 flex justify-between items-center">
         {/* LEFT: Social links (desktop only) */}

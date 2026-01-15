@@ -45,7 +45,7 @@ export default function Sidebar() {
               : inactiveLink
           }`}>
           <span>📝</span>
-          <span>My Reviews</span>
+          <span>Submissions</span>
         </Link>
 
         {/* Settings */}

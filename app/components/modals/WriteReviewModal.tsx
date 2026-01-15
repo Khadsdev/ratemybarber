@@ -39,17 +39,6 @@ export default function WriteReviewModal({ barberId }: WriteReviewModalProps) {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [isOpen, closeModal]);
 
-  // When refresh finishes, log how long it took
-  useEffect(() => {
-    if (!isPending && refreshStartRef.current !== null) {
-      const ms = performance.now() - refreshStartRef.current;
-      console.log(
-        `[WriteReviewModal] router.refresh() completed in ${ms.toFixed(0)}ms`
-      );
-      refreshStartRef.current = null;
-    }
-  }, [isPending]);
-
   // Called after the review insert succeeds
   const handleSuccess = useCallback(() => {
     closeModal();
