@@ -3,7 +3,7 @@
 RateMyBarber is a web app where users can discover barbers, view reviews, and share their own experiences.
 I’m building this project to practice real-world product development with modern frontend tools — and to get better by shipping features consistently.
 
-![Admin Dashboard](./screenshots/dashboard.png)
+![Admin Dashboard](./screenshots/home.png)
 
 ---
 
