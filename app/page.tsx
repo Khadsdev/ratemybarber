@@ -15,9 +15,7 @@ export default async function Home() {
   const hasBarbers = barbers && barbers.length > 0;
 
   return (
-    <div className="min-h-screen bg-[#f6f0e9] text-slate-900">
-      {/* Top navigation */}
-
+    <div className="min-h-screen pb-16 bg-[#f6f0e9] text-slate-900">
       <main className="relative">
         {/* ================= HERO / BANNER ================= */}
         <header
@@ -40,10 +38,11 @@ export default async function Home() {
               {/* Search bar (we’ll wire this up later) */}
               <div className="w-full max-w-xl mx-auto">
                 <input
+                  name="search"
                   type="text"
                   placeholder="Search for a barber or city (e.g. Oslo)…"
                   className="w-full py-3 px-5 rounded-2xl border border-gray-200 shadow-lg text-white 
-                             focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-500"
+                             focus:outline-none focus:ring-2 focus:ring-emerald-400 placeholder:text-slate-500"
                 />
               </div>
             </div>
@@ -177,7 +176,7 @@ export default async function Home() {
                         <a
                           href={`/barber/${barber.id}`}
                           className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg
-                                     bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+                                     bg-emerald-600 text-white hover:bg-emerald-700 transition-colors">
                           View &amp; Rate
                         </a>
                       </div>
